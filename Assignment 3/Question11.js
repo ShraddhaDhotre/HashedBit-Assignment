@@ -1,7 +1,7 @@
 const input = [
   {
     student1: {
-      subject1: 44,
+      subject1: 45,
       subject2: 56,
       subject3: 87,
       subject4: 97,
@@ -10,7 +10,7 @@ const input = [
   },
   {
     student2: {
-      subject1: 44,
+      subject1: 45,
       subject2: 56,
       subject3: 87,
       subject4: 97,
@@ -19,7 +19,7 @@ const input = [
   },
   {
     student3: {
-      subject1: 44,
+      subject1: 45,
       subject2: 56,
       subject3: 87,
       subject4: 97,
