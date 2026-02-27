@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="myPara">This is a paragraph that can be hidden or shown.</p>
+<button id="toggleBtn">Hide Paragraph</button>
+
+<script>
+  const para = document.getElementById("myPara");
+  const toggleBtn = document.getElementById("toggleBtn");
+
+  toggleBtn.addEventListener("click", function() {
+    if (para.style.display === "none") {
+      para.style.display = "block";
+      toggleBtn.textContent = "Hide Paragraph";
+    } else {
+      para.style.display = "none";
+      toggleBtn.textContent = "Show Paragraph";
+    }
+  });
+</script>
+
+</body>
+</html>
