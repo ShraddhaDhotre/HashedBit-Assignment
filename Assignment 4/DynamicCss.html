@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="text">This text will change dynamically.</p>
+
+<button id="bigBtn">Make Text Big</button>
+<button id="colorBtn">Change Color</button>
+
+<script>
+  const text = document.getElementById("text");
+  const bigBtn = document.getElementById("bigBtn");
+  const colorBtn = document.getElementById("colorBtn");
+
+  bigBtn.onclick = function() {
+    text.style.fontSize = "30px";
+  };
+
+  colorBtn.onclick = function() {
+    text.style.color = text.style.color === "red" ? "black" : "red";
+  };
+</script>
+
+</body>
+</html>
