@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container"></div>
+<button id="createBtn">Create New Div</button>
+
+<script>
+  const container = document.getElementById("container");
+  const createBtn = document.getElementById("createBtn");
+
+  createBtn.onclick = function() {
+    const newDiv = document.createElement("div");
+    newDiv.textContent = "This is a dynamically created div.";
+    newDiv.style.border = "1px solid black";
+    newDiv.style.padding = "8px";
+    newDiv.style.margin = "5px 0";
+    container.appendChild(newDiv);
+  };
+</script>
+
+</body>
+</html>
