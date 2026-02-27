@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Practice Q1–Q11</title>
+</head>
+<body>
+  <h2>Open Console (F12) to See Outputs</h2>
+
+  <script>
+    console.log("========== Q1 ==========");
+    const states = [
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+      "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
+      "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
+      "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
+      "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
+      "Uttar Pradesh", "Uttarakhand", "West Bengal"
+    ];
+    const filteredStates = states.filter(state => {
+      const firstChar = state[0].toLowerCase();
+      return !["a", "e", "i", "o", "u"].includes(firstChar);
+    });
+    console.log(filteredStates);
+
+    console.log("========== Q2 ==========");
+    let str = "I love my India";
+    console.log(str.split(" ").reverse().join(" "));
+
+    console.log("========== Q3 ==========");
+    let string = "INDIA";
+    let arr = string.split("");
+    arr.splice(3, 0, "O", "N", "E", "S", "I");
+    console.log(arr.join("")); // INDONESIA
+
+    console.log("========== Q4 ==========");
+    let text = "JavaScript is a powerful language";
+    let vowels = 0;
+    let consonants = 0;
+    for (let char of text.toLowerCase()) {
+      if (/[a-z]/.test(char)) {
+        if ("aeiou".includes(char)) vowels++;
+        else consonants++;
+      }
+    }
+    console.log("Vowels:", vowels, "Consonants:", consonants);
+
+    console.log("========== Q5 ==========");
+    function correctfn(sentence, wrong, correct) {
+      return sentence.replace(wrong, correct);
+    }
+    console.log(correctfn("I love Javascrpt", "Javascrpt", "JavaScript"));
+
+    console.log("========== Q6 ==========");
+    let inputArr = [1, 2, 3, 9, 10, 7, 5, 4, 3];
+    let answer = inputArr.filter(num => num > 5);
+    console.log(answer);
+
+    console.log("========== Q7 ==========");
+    const students = [
+      { name: "Ram", scores: [80, 70, 60] },
+      { name: "Mohan", scores: [80, 70, 90] },
+      { name: "Sai", scores: [60, 70, 80] },
+      { name: "Hemang", scores: [90, 90, 80, 80] },
+    ];
+    const resultStudents = students.map(student => {
+      const total = student.scores.reduce((sum, score) => sum + score, 0);
+      const avg = total / student.scores.length;
+      return { name: student.name, average: avg };
+    });
+    console.log(resultStudents);
+
+    console.log("========== Q8 ==========");
+    function singleDigitSum(num) {
+      while (num >= 10) {
+        num = num
+          .toString()
+          .split("")
+          .reduce((sum, digit) => sum + Number(digit), 0);
+      }
+      return num;
+    }
+    console.log(singleDigitSum(456)); // 6
+
+    console.log("========== Q9 ==========");
+    function countWords(paragraph) {
+      return paragraph.trim().split(/\s+/).length;
+    }
+    console.log(countWords("JavaScript is a very powerful language"));
+
+    console.log("========== Q10 ==========");
+    function reverseString(str) {
+      return str.split("").reverse().join("");
+    }
+    console.log(reverseString("Hello"));
+
+    console.log("========== Q11 ==========");
+    const input = [
+      {
+        student1: {
+          subject1: 44,
+          subject2: 56,
+          subject3: 87,
+          subject4: 97,
+          subject5: 37
+        }
+      },
+      {
+        student2: {
+          subject1: 44,
+          subject2: 56,
+          subject3: 87,
+          subject4: 97,
+          subject5: 37
+        }
+      },
+      {
+        student3: {
+          subject1: 44,
+          subject2: 56,
+          subject3: 87,
+          subject4: 97,
+          subject5: 37
+        }
+      }
+    ];
+
+    const output = input.map(studentObj => {
+      const key = Object.keys(studentObj)[0];
+      const marks = Object.values(studentObj[key]);
+      const avg = marks.reduce((sum, m) => sum + m, 0) / marks.length;
+      return { [key]: { average: avg } };
+    });
+
+    console.log(output);
+  </script>
+</body>
+</html>
