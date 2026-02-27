@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #app.day {
+      background: white;
+      color: black;
+    }
+    #app.night {
+      background: black;
+      color: gold;
+    }
+    .button_day {
+      background: white;
+      color: black;
+    }
+    .button_night {
+      background: darkblue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app" class="day">
+  <p>I am a Newton School student, ready to become an awesome full stack developer</p>
+  <button id="swap" class="button_day">Toggle theme</button>
+</div>
+
+<script>
+  const app = document.getElementById("app");
+  const swapBtn = document.getElementById("swap");
+
+  function swapTheme() {
+    if (app.classList.contains("day")) {
+      app.classList.replace("day", "night");
+      swapBtn.classList.replace("button_day", "button_night");
+    } else {
+      app.classList.replace("night", "day");
+      swapBtn.classList.replace("button_night", "button_day");
+    }
+  }
+
+  swapBtn.addEventListener("click", swapTheme);
+</script>
+
+</body>
+</html>
